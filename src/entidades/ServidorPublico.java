@@ -1,16 +1,41 @@
 package entidades;
 
-public class ServidorPublico{
+import javax.sound.midi.Soundbank;
 
+public class ServidorPublico {
+
+        public String getNome;
         private int material;
         private String orgao;
         private String foto;
         private String vinculo;
         private double salario;
         private int idade;
+        private String nome;
+
+        public String getNome() {
+                return nome;
+        }
+
+        public void setNome(String nome) {
+                this.nome = nome;
+        }
+
+        public static Object getHorasExtras() {
+                return null;
+        }
+
         private int tempoDeContribuicao;
         private String email;
+        private double horasExtras;
 
+        public double HorasExtras() {
+                return horasExtras;
+        }
+
+        public void setHorasExtras(double horasExtras) {
+                this.horasExtras = horasExtras;
+        }
 
         public String getEmail() {
                 return email;
@@ -169,11 +194,23 @@ public class ServidorPublico{
                 this.caio = caio;
         }
 
-        public double calcularSalariohorasExtras (double horastrabalhadas, double valorHora){
+        public double calcularSalariohorasExtras(double horastrabalhadas, double valorHora) {
                 double salarioMensal = salario +
-                        (horastrabalhadas*valorHora);
+                        (horastrabalhadas * valorHora);
+                horasExtras = salarioMensal;
                 return (salarioMensal);
         }
+        double soma = 0;
+
+        public double calcularNumeros(double... numeros) {
+                for (double numero : numeros) {
+                        soma += numero;
+                }
+
+                System.out.println("A soma dos argumentos informados"+ soma);
+                return soma;
+
+        }
+
 
 }
-
